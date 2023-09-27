@@ -30,11 +30,13 @@ function init()
     player1 = new Player("player1", 0xffff00, new THREE.Vector2(pos[0], pos[1]), 0);
     scene.add(player1.graphic);
 
-    player2 = new Player("player2", 0xffff00, new THREE.Vector2(0, 50), 0);
-    scene.add(player2.graphic);
+    ennemies = new enemies();
 
     light1 = new Light("sun", 0xffffff, "0,0,340");
     scene.add(light1);
+
+    update();
+
 }
 
 function Ground(color, size_x, size_y, nb_tile)
@@ -60,7 +62,7 @@ function Ground(color, size_x, size_y, nb_tile)
                 new THREE.MeshLambertMaterial({color: color, transparent: true, opacity: 0.6}));
                 tmpGround.position.x = x;
                 tmpGround.position.y = y;
-                if (x < size_x / 2 && y < size_y / 2)
+                if (x < size_x / 4 && y < size_y / 4)
                 pos = [x, y]
                 scene.add(tmpGround);
             }

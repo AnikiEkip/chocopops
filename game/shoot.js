@@ -51,18 +51,7 @@ function bullet_collision()
             player1.bullets.splice(i, 1);
             i--;
         }
-    }
-
-    //collision between bullet and enemies
-    for (var i = 0; i < player1.bullets.length; i++){
-        if (Math.abs(player1.bullets[i].position.x) == WIDTH / 2 ||
-            Math.abs(player1.bullets[i].position.y) == HEIGHT / 2)
-        {
-            scene.remove(player1.bullets[i]);
-            player1.bullets.splice(i, 1);
-            i--;
-        }
-    }
+}
 
 }
 
@@ -79,7 +68,7 @@ function player_collision()
     if ( y > HEIGHT )
         player1.graphic.position.y -= y - HEIGHT;
     if (x < 0)
-    player1.graphic.position.x -= x;
+        player1.graphic.position.x -= x;
 
 }
 
